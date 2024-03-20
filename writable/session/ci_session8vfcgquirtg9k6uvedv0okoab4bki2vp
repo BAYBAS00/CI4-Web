@@ -1,0 +1,1 @@
+__ci_last_regenerate|i:1710747678;_ci_previous_url|s:44:"http://localhost:8080/index.php/tambah_dosen";message|a:3:{s:10:"kode_dosen";s:33:"The kode_dosen field is required.";s:10:"nama_dosen";s:33:"The nama_dosen field is required.";s:12:"status_dosen";s:35:"The status_dosen field is required.";}__ci_vars|a:1:{s:7:"message";s:3:"old";}
