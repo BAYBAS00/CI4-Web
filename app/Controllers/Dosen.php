@@ -10,12 +10,15 @@ class Dosen extends BaseController
  */
 public function index()
 {
+        if (!session()->has('username')) {
+            return redirect('Login::index');
+        }
     //model initialize
     $DataDosen = new DosenModel();
     $pager = \Config\Services::pager();
 
     $data = array(
-        'DataDosen' => $DataDosen->paginate(2, 'dosen'),
+        'DataDosen' => $DataDosen->paginate(10, 'dosen'),
         'pager' => $DataDosen->pager
     );
     return view('dosen', $data);
@@ -40,6 +43,16 @@ public function store()
     if (!$this->validateData($data, $rules)) {
       return redirect()->back()->with('message', $this->validator->getErrors());
     }
+
+    $token = getenv('TOKEN_BOT'); //token bot
+    $username = session('username');
+        $datas = [
+            'text' => 'User ' . session()->get('username') . ' menambahkan Dosen ' . $data['nama_dosen'],
+            'chat_id' => getenv('CHAT_ID')  //contoh bot, group id -442697126
+        ];
+
+        file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($datas));
+
     $DataDosen->save($this->request->getPost());
 
     return redirect()->route('Dosen::index')->with('message','Tambah Data Sukses');

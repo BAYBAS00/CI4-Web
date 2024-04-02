@@ -62,7 +62,7 @@
                         <?php endforeach ?>
                     </tbody>
                 </table>
-
+                <a href="<?= url_to('Home::index') ?>" class="btn btn-secondary">Home</a>
             </div>
         </div>
     </div>
