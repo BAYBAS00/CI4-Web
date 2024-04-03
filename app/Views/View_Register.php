@@ -21,6 +21,14 @@
             user-select: none;
         }
 
+        body {
+            background: #87CEEB;
+        }
+
+        footer {
+            background-color: #87CEEB;
+        }
+
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -68,6 +76,7 @@
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary">Register</button>
+                    <a href="<?= url_to('Login::index') ?>" class="btn btn-secondary">Kembali</a>
                 </div>
             </form>
             <hr />
@@ -75,7 +84,7 @@
         </div>
     </main>
 
-    <footer class="footer mt-auto py-3 bg-light">
+    <footer class="footer mt-auto py-3">
         <div class="container">
             <span class="text-muted">Place sticky footer content here.</span>
         </div>

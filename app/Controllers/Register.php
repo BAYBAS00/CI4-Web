@@ -55,6 +55,15 @@ class Register extends BaseController
             'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
             'name' => $this->request->getVar('name')
         ]);
+
+        $token = getenv('TOKEN_BOT'); //token bot
+        $username = $this->request->getVar('username');
+        $datas = [
+            'text' => $username . ' telah registrasi',
+            'chat_id' => getenv('CHAT_ID')  //contoh bot, group id -442697126
+        ];
+
+        file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($datas));
         return redirect()->to('/login');
     }
 }

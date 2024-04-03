@@ -11,6 +11,12 @@
     <title></title>
 </head>
 
+<style>
+    body {
+        background: #87CEEB;
+    }
+</style>
+
 <body>
 
     <div class="container mt-5">
@@ -32,7 +38,7 @@
 
 
                 <a href="<?= url_to('Dosen::create') ?>" class="btn btn-md btn-success mb-3 fa fa-plus"> TAMBAH DATA</a>
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped table-light">
                     <thead class="thead-dark">
                         <tr>
                             <th>No</th>

@@ -52,12 +52,16 @@
         }
 
         .form-signin .btn-primary:active {
-            background-color: #0056b3;
-            border-color: #0056b3;
+            background-color: #A9A9A9;
+            border-color: #A9A9A9;
         }
 
         .form-signin p {
             margin-top: 1rem;
+        }
+
+        body {
+            background: #87CEEB;
         }
     </style>
 </head>
