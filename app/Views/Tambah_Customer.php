@@ -5,25 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Tambah Data Dosen</title>
-
-    <style>
-        body {
-            background: #87CEEB !important;
-        }
-
-        .card-header {
-            background-color: #A0DEFF;
-        }
-    </style>
+    <title>Tambah Data Customer</title>
 </head>
+
+<style>
+    body {
+        background: #87CEEB !important;
+    }
+
+    .card-header {
+        background-color: #A0DEFF;
+    }
+</style>
 
 <body>
     <?php include 'Navbar.php' ?>
     <div class="container mt-5">
         <div class="card">
             <div class="card-header">
-                <h2>Tambah Dosen</h2>
+                <h2>Tambah Data Customer</h2>
             </div>
             <div class="card-body">
                 <?php if (!empty(session()->getFlashdata('message'))) : ?>
@@ -46,33 +46,29 @@
 
                 <?php endif ?>
 
-                <form action="<?= url_to('Dosen::store') ?>" method="post">
+                <form action="<?= url_to('Customer::store') ?>" method="post">
                     <div class="form-group row">
-                        <label for="kode_dosen" class="col-sm-2 col-form-label">Kode Dosen</label>
+                        <label for="nama_cust" class="col-sm-2 col-form-label">Nama Customer</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="kode_dosen" name="kode_dosen" placeholder="Kode Dosen">
+                            <input type="text" class="form-control" id="nama_cust" name="nama_cust" placeholder="Nama Customer">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="nama_dosen" class="col-sm-2 col-form-label">Nama Dosen</label>
+                        <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nama_dosen" name="nama_dosen" placeholder="Nama Dosen">
+                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="status_dosen" class="col-sm-2 col-form-label">Status Dosen</label>
+                        <label for="no_telp" class="col-sm-2 col-form-label">No Telepon</label>
                         <div class="col-sm-10">
-                            <select name="status_dosen" id="status_dosen" class="form-control">
-                                <option value="">Status</option>
-                                <option value="0">Tidak Aktif</option>
-                                <option value="1">Aktif</option>
-                            </select>
+                            <input type="text" class="form-control" id="no_telp" name="no_telp" placeholder="No Telepon">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="<?= url_to('Dosen::index') ?>" class="btn btn-secondary">Kembali</a>
+                            <a href="<?= url_to('Customer::index') ?>" class="btn btn-secondary">Kembali</a>
                         </div>
                     </div>
                 </form>

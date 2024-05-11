@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Dosen</title>
+    <title>Data Barang</title>
 </head>
 
 <style>
@@ -30,7 +30,7 @@
     <?php include 'Navbar.php' ?>
     <div class="card">
         <div class="card-header">
-            <h1>Data Dosen</h1>
+            <h1>Data Barang</h1>
         </div>
     </div>
     <div class="container mt-5">
@@ -51,14 +51,15 @@
                 <?php endif ?>
 
 
-                <a href="<?= url_to('Dosen::create') ?>" class="btn btn-md btn-success mb-3 fa fa-plus"> TAMBAH DATA</a>
+                <a href="<?= url_to('Barang::create') ?>" class="btn btn-md btn-success mb-3 fa fa-plus"> TAMBAH DATA</a>
                 <table class="table table-bordered table-striped table-light">
                     <thead class="thead-dark">
                         <tr>
                             <th>No</th>
-                            <th>Kode Dosen</th>
-                            <th>Nama Dosen</th>
-                            <th>Status</th>
+                            <th>Nama Barang</th>
+                            <th>Satuan</th>
+                            <th>Stok</th>
+                            <th>Harga Jual</th>
                             <th>AKSI</th>
                         </tr>
                     </thead>
@@ -66,16 +67,17 @@
 
                         <?php
                         $no = 1;
-                        foreach ($DataDosen as $key => $dosen) : ?>
+                        foreach ($DataBarang as $key => $barang) : ?>
 
                             <tr>
                                 <td><?php echo $no++ ?></td>
-                                <td><?php echo $dosen['kode_dosen'] ?></td>
-                                <td><?php echo $dosen['nama_dosen'] ?></td>
-                                <td><?php echo ($dosen['status_dosen']) ? 'Aktif' : 'Tidak Aktif' ?></td>
+                                <td><?php echo $barang['nama_barang'] ?></td>
+                                <td><?php echo $barang['satuan'] ?></td>
+                                <td><?php echo $barang['stok'] ?></td>
+                                <td><?php echo $barang['harga_jual'] ?></td>
                                 <td class="text-center">
-                                    <a href="/edit_dosen/<?= $dosen['id_dosen']; ?>" class="btn btn-warning fa fa-pencil-square-o"> Edit</a>
-                                    <a href="/hapus_dosen/<?= $dosen['id_dosen']; ?>" class=" btn btn-danger fa fa-trash-o"> Delete</a>
+                                    <a href="/edit_barang/<?= $barang['id_barang']; ?>" class="btn btn-warning fa fa-pencil-square-o"> Edit</a>
+                                    <a href="/hapus_barang/<?= $barang['id_barang']; ?>" class=" btn btn-danger fa fa-trash-o"> Delete</a>
                                 </td>
                             </tr>
 
